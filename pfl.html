@@ -1,0 +1,227 @@
+<!--
+  - templates/pfl.tpl
+  -
+  - Copyright (c) 2023 Simon Fraser University
+  - Copyright (c) 2023 John Willinsky
+  - Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+  -
+  - Journal Integrity Initiative Publication Facts Label template
+  -->
+<html dir="ltr">
+ <head>
+  <title>Publication Facts Label Sample Integration</title>
+ </head>
+ <body>
+
+<!-- This section contains the Publication Facts Label. -->
+
+<section class="item pflPlugin">
+
+<link rel="stylesheet" href="css/pfl.css" type="text/css">
+
+<style>
+@font-face {
+  font-family: 'Noto Sans';
+  src: url(font/NotoSans-VariableFont_wdth,wght.woff2) format('woff2');
+  font-weight: 100 900;
+}
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function pflShowHideFactsLabel() {
+            const toggleButton = document.getElementById("pfl-button-open-facts");
+            const pflFactTable = document.getElementById("pfl-fact-table");
+            const pflContainer = document.getElementById("pfl-container");
+            const highlightDropdown = document.querySelector(".pfl-dropdown");
+            const placeHolderText = document.getElementById("pfl-buttonText");
+            const survey = document.getElementById("ff-compose");
+            if (!toggleButton || !pflFactTable || !pflContainer || !highlightDropdown || !placeHolderText) {
+                console.error("One or more required elements are missing.");
+                return;
+            }
+
+            const ariaExpandedAttr = toggleButton.getAttribute("aria-expanded");
+
+            if (ariaExpandedAttr === "false") {
+                toggleButton.setAttribute("aria-expanded", "true")
+
+                pflContainer.classList.add("expanded");
+                highlightDropdown.classList.add("expanded");
+                placeHolderText.classList.add("pfl-sr-only");
+                
+                pflFactTable.style.display = "block";
+                if(survey) {
+                    survey.style.display = "block";
+                }
+            } else {
+                toggleButton.setAttribute("aria-expanded","false");
+
+                pflContainer.classList.remove("expanded");
+                highlightDropdown.classList.remove("expanded");
+                placeHolderText.classList.remove("pfl-sr-only");
+
+                pflFactTable.style.display = "none";
+                
+                if(survey) {
+                    survey.style.display = "none";
+                }
+            }
+        }
+
+        const toggleButton = document.getElementById('pfl-button-open-facts');
+        if (toggleButton) {
+            toggleButton.addEventListener('click', pflShowHideFactsLabel);
+        }
+    });
+</script>
+ 
+
+<div class="publication-facts-label">
+ 
+    <div class="pfl-dropdown">
+        <button id="pfl-button-open-facts" aria-controls="pfl-fact-table" aria-expanded="false">
+            <span><span id="pfl-buttonText">Publication Facts</span></span><img src="img/pfl-down-arrow.svg" aria-hidden="true">
+        </button>
+    </div>
+ 
+    <div id="pfl-container" class="pfl-container">
+
+        <div id="pfl-fact-table" class="pfl-tables" role="region">
+ 
+            <h2 id="pfl-title" data-name="pfl-title">Publication Facts</h2>
+ 
+            <div role="table">
+                <div role="row" class="pfl-header-row">
+                    <div role="columnheader" class="pfl-sr-only"><span>Metric</span></div>
+                    <div role="columnheader" class="pfl-this-cell">This article</div>
+                    <div role="columnheader" class="pfl-other-cell">Other articles</div>
+                </div>
+                <div role="row" class="pfl-body-row">
+                    <div role="rowheader"class="pfl-bold">Peer reviewers&nbsp;</div>
+                    <div role="cell"class="pfl-this-cell pfl-bold">2</div>
+                    <div role="cell" class="pfl-other-cell">2.5</div>
+                </div>
+            </div>
+
+            <div class="pfl-indent pfl-body-row">
+                <p>Reviewer profiles&nbsp;
+                N/A
+                </p>
+            </div>
+
+            <h3 class="pfl-body-row">
+                <div class="pfl-this-cell pfl-bold">Author statements</div>
+            </h3>
+
+            <div role="table">
+                <div role="row" class="pfl-header-row pfl-sr-only">
+                    <div role="columnheader"><span>Author statements</span></div>
+                    <div role="columnheader">This article</div>
+                    <div role="columnheader">Other articles</div>
+                </div>
+                <div role="row" class="pfl-body-row">
+                    <div role="rowheader"class="pfl-indent">Data availability&nbsp;</div>
+                    <div role="cell"class="pfl-this-cell">
+                        N/A                    
+                    </div>
+                    <div role="cell"class="pfl-other-cell">40%</div>
+                </div>
+                <div role="row" class="pfl-body-row">
+                    <div role="rowheader" class="pfl-indent">External funding&nbsp;</div>
+                    <div role="cell"class="pfl-this-cell">
+                        Funders: <a href="#funding-data">Yes</a>
+                    </div>
+                    <div role="cell"class="pfl-other-cell">20%</div>
+                </div>
+                <div role="row" class="pfl-body-row">
+                    <div role="rowheader"class="pfl-indent">Competing interests&nbsp;</div>
+                    <div role="cell"class="pfl-this-cell">
+                            <a href="#author-list">Yes</a>
+                    </div>
+                    <div role="cell"class="pfl-other-cell">25%</div>
+                </div>
+            </div>
+
+            <div role="table">
+                <div role="row" class="pfl-header-row">
+                    <div role="columnheader" class="pfl-sr-only"><span>Metric</span></div>
+                    <div role="columnheader" class="pfl-this-cell">This journal</div>
+                    <div role="columnheader" class="pfl-other-cell">Other journals</div>
+                </div>
+                
+                <div role="row" class="pfl-body-row">
+                    <div role="rowheader"class="pfl-bold">Articles accepted&nbsp;</div>
+                    <div role="cell"class="pfl-this-cell pfl-bold">15%</div>
+                    <div role="cell" class="pfl-other-cell">18%</div>
+                </div>
+                
+                <div role="row" class="pfl-body-row">
+                    <div role="rowheader"class="pfl-indent">Days to publication&nbsp;</div>
+                    <div role="cell"class="pfl-this-cell">180</div>
+                    <div role="cell" class="pfl-other-cell">240</div>
+                </div>
+            </div>
+
+            <div class="pfl-body-row">
+                <h3 id="pfl-heading-indexed-in" class="pfl-bold">Indexed in</h3>
+                <ul class="pfl-list-item" aria-labelledby="pfl-heading-indexed-in" role="list">
+                    <li><a href="#" target="_blank" aria-description="Index Description}">DOAJ</a></li>
+                </ul>
+            </div>
+
+            <dl>
+                <div class="pfl-body-row pfl-orcid-icon">
+                    <dt class="pfl-bold">Editor &amp; editorial board</dt>
+                    <dd class="pfl-list-item pfl-orcid-icon">
+                        <img src="img/orcid.svg" alt="ORCiD logo image" aria-hidden="true">
+                        <a href="{url page="about" op="editorialTeam"}" target="_blank">profiles</a>
+                    </dd>
+                </div>
+
+                <div class="pfl-body-row">
+                    <dt class="pfl-indent">Society&nbsp;</dt>
+                    <dd class="pfl-list-item"><a href="#" target="_blank">Academic Society</a></dd>
+                </div>
+
+                  <div class="pfl-body-row">
+                    <dt class="pfl-indent">Publisher&nbsp;</dt>
+                    <dd class="pfl-list-item">
+                        <a href="#" target="_blank">Publisher Name</a>
+                    </dd>
+                  </div>
+            </dl>
+
+            <div id="pfl-table-footer">
+                <p>To learn about these publication facts, click <a href="https://pkp.sfu.ca/information-on-pfl/"><img class="pfl-info-icon" src="img/info_icon.svg" alt="Publication facts information page."></a></p>
+                <p><b>PF</b> is maintained by the <a href="https://pkp.sfu.ca" target="_blank">Public Knowledge Project</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<!-- The Publication Facts Label ends here. -->
+
+  <div>
+   <h1>Technical Specifications</h1>
+    <h2>Terminology</h2>
+     <ul>
+      <li>
+       <b>Reviewable Article</b>: A published scholarly work that is suitable for peer review. Examples of reviewable articles:
+       <ol>
+        <li>A journal article that is published in the "Articles" section of an academic journal and has undergone peer review.</li>
+        <li>A journal article that is published in the "Articles" section of an academic journal, but <i>has not</i> undergone peer review.</li>
+       </ol>
+       Examples of pieces of content that <i>are not</i> reviewable articles:
+       <ol>
+        <li>A journal article that is published in the "Literature Reviews" section of an academic journal. Review articles are typically not subject to peer review.</li>
+        <li>A note from the editors published alongside peer-reviewed content. Notes from the editors are typically not subject to peer review.</li>
+       </ol>
+     </ul>
+    <h2>Calculations</h2>
+  </div>
+
+ </body>
+</html>
