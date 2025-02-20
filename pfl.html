@@ -49,7 +49,7 @@
                 pflContainer.classList.add("expanded");
                 highlightDropdown.classList.add("expanded");
                 placeHolderText.classList.add("pfl-sr-only");
-                
+
                 pflFactTable.style.display = "block";
                 if(survey) {
                     survey.style.display = "block";
@@ -62,7 +62,7 @@
                 placeHolderText.classList.remove("pfl-sr-only");
 
                 pflFactTable.style.display = "none";
-                
+
                 if(survey) {
                     survey.style.display = "none";
                 }
@@ -75,22 +75,22 @@
         }
     });
 </script>
- 
+
 
 <div class="publication-facts-label">
- 
+
     <div class="pfl-dropdown">
         <button id="pfl-button-open-facts" aria-controls="pfl-fact-table" aria-expanded="false">
             <span><span id="pfl-buttonText">Publication Facts</span></span><img src="img/pfl-down-arrow.svg" aria-hidden="true">
         </button>
     </div>
- 
+
     <div id="pfl-container" class="pfl-container">
 
         <div id="pfl-fact-table" class="pfl-tables" role="region">
- 
+
             <h2 id="pfl-title" data-name="pfl-title">Publication Facts</h2>
- 
+
             <div role="table">
                 <div role="row" class="pfl-header-row">
                     <div role="columnheader" class="pfl-sr-only"><span>Metric</span></div>
@@ -98,16 +98,14 @@
                     <div role="columnheader" class="pfl-other-cell">Other articles</div>
                 </div>
                 <div role="row" class="pfl-body-row">
-                    <div role="rowheader"class="pfl-bold">Peer reviewers&nbsp;</div>
+                    <div id="pfl-peer-reviewers" role="rowheader"class="pfl-bold">Peer reviewers&nbsp;</div>
                     <div role="cell"class="pfl-this-cell pfl-bold">2</div>
                     <div role="cell" class="pfl-other-cell">2.5</div>
                 </div>
             </div>
 
             <div class="pfl-indent pfl-body-row">
-                <p>Reviewer profiles&nbsp;
-                N/A
-                </p>
+                <p><a id="pfl-reviewer-profiles" href="#">Reviewer profiles</a></p>
             </div>
 
             <h3 class="pfl-body-row">
@@ -121,21 +119,21 @@
                     <div role="columnheader">Other articles</div>
                 </div>
                 <div role="row" class="pfl-body-row">
-                    <div role="rowheader"class="pfl-indent">Data availability&nbsp;</div>
+                    <div id="pfl-data-availability" role="rowheader"class="pfl-indent">Data availability&nbsp;</div>
                     <div role="cell"class="pfl-this-cell">
-                        N/A                    
+                        N/A
                     </div>
                     <div role="cell"class="pfl-other-cell">40%</div>
                 </div>
                 <div role="row" class="pfl-body-row">
-                    <div role="rowheader" class="pfl-indent">External funding&nbsp;</div>
+                    <div id="pfl-external-funding" role="rowheader" class="pfl-indent">External funding&nbsp;</div>
                     <div role="cell"class="pfl-this-cell">
-                        Funders: <a href="#funding-data">Yes</a>
+                        No
                     </div>
                     <div role="cell"class="pfl-other-cell">20%</div>
                 </div>
                 <div role="row" class="pfl-body-row">
-                    <div role="rowheader"class="pfl-indent">Competing interests&nbsp;</div>
+                    <div id="pfl-competing-interests" role="rowheader"class="pfl-indent">Competing interests&nbsp;</div>
                     <div role="cell"class="pfl-this-cell">
                             <a href="#author-list">Yes</a>
                     </div>
@@ -149,15 +147,15 @@
                     <div role="columnheader" class="pfl-this-cell">This journal</div>
                     <div role="columnheader" class="pfl-other-cell">Other journals</div>
                 </div>
-                
+
                 <div role="row" class="pfl-body-row">
-                    <div role="rowheader"class="pfl-bold">Articles accepted&nbsp;</div>
+                    <div id="pfl-articles-accepted" role="rowheader"class="pfl-bold">Articles accepted&nbsp;</div>
                     <div role="cell"class="pfl-this-cell pfl-bold">15%</div>
                     <div role="cell" class="pfl-other-cell">18%</div>
                 </div>
-                
+
                 <div role="row" class="pfl-body-row">
-                    <div role="rowheader"class="pfl-indent">Days to publication&nbsp;</div>
+                    <div id="pfl-days-to-publication" role="rowheader"class="pfl-indent">Days to publication&nbsp;</div>
                     <div role="cell"class="pfl-this-cell">180</div>
                     <div role="cell" class="pfl-other-cell">240</div>
                 </div>
@@ -206,9 +204,11 @@
 
   <div>
    <h1>Technical Specifications</h1>
+    <h2>General Overview</h2>
+     <p>The Publication Facts Label presents information alongside an article. It contrasts the article's statistics against those for other articles, in order to inform the reader about norms and how this article compares to them.</p>
     <h2>Terminology</h2>
      <ul>
-      <li>
+      <li id="reviewable-articles">
        <b>Reviewable Article</b>: A published scholarly work that is suitable for peer review. Examples of reviewable articles:
        <ol>
         <li>A journal article that is published in the "Articles" section of an academic journal and has undergone peer review.</li>
@@ -219,8 +219,29 @@
         <li>A journal article that is published in the "Literature Reviews" section of an academic journal. Review articles are typically not subject to peer review.</li>
         <li>A note from the editors published alongside peer-reviewed content. Notes from the editors are typically not subject to peer review.</li>
        </ol>
+      </li>
+      <li id="repostiory">
+       <b>Repository</b>: The stand-alone collection of published scholarly content to which the Publication Facts Label is being applied. This is the collection of content for which statistics may be contributed upstream to the Integrity Initiative; see <a href="#contributing-to-statistics">Contributing to Statistics</a> for details.
+      </li>
      </ul>
-    <h2>Calculations</h2>
+     <h2>Fields &amp; Calculations</h2>
+      <ol>
+       <li><strong><a href="#pfl-peer-reviewers">Peer reviewers</a></strong>: After this text, indicate the total number of peer reviewers who have provided reviews for this article. (If a single reviewer has reviewed the article in multiple rounds, they are only counted once.)</li>
+       <li><strong><a href="#pfl-reviewer-profiles">Reviewer profiles</a></strong>: If the platform provides information about reviewer profiles, this text should be followed by "Yes", which should be a link to where the profiles can be viewed. If not, use the text "Reviewer profiles: N/A" to indicate "not applicable".</li>
+       <li><strong><a href="#pfl-data-availability">Data availability</a></strong>: If the platform provides author data availability statements, this text should be followed by "Yes", which should be a link to where the statements can be found. If not, use the text "Data availability: N/A" to indicate "not applicable".</li>
+       <li><p><strong><a href="#pfl-external-funding">External funding</a></strong>: This area indicates whether funding data is supported by the platform, and if so, whether it is available for this article. It can appear as follows:</p>
+        <ul>
+        <li>If the platform does not support information about external funders, it should read <strong>External funding: N/A</strong>.</li>
+        <li>If the platform supports funding information and it has been entered for this article, it should read <strong>External funding: Yes</strong>, and the "Yes" should link to where the funding data is presented.</li>
+         <li>If the platform supports funding information but none has been entered for this article, it should read <strong>External funding: No</strong>.</li>
+        </ul>
+       </li>
+       <li><strong><a href="#pfl-articles-accepted">Articles accepted</a></strong>: After this text, include the percentage of <a href="#reviewable-articles">reviewable articles</a> in this repository that are accepted for publication.</a></li>
+      </ol>
+     <h2>Getting "Other articles" Statistics</h2>
+      <p>Current statistics can be downloaded from the <a href="https://github.com/pkp/integrity-initiative-data">pkp/integrity-initiative-data</a> repository. We recommend downloading on e.g. a daily or weekly basis and caching locally.</p>
+     <h2 id="contributing-to-statistics">Contributing to Statistics</h2>
+      (to be documented)
   </div>
 
  </body>
