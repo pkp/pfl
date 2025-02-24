@@ -204,50 +204,97 @@
 
   <div>
    <h1>Technical Specifications</h1>
-    <h2>General Overview</h2>
-     <p>The Publication Facts Label presents information alongside a <a href="#reviewable-article">Reviewable Article</a>. It contrasts the article's statistics against those for other reviewable articles, in order to inform the reader about norms and how this article compares to them.</p>
-    <h2>Terminology</h2>
+   <h2>General Overview</h2>
+   <p>The Publication Facts Label presents information alongside a <a href="#reviewable-article">Reviewable Article</a>. It contrasts the article's statistics against those for other reviewable articles, in order to inform the reader about norms and how this article compares to them.</p>
+   <h2>Terminology</h2>
+   <ul>
+    <li id="reviewable-article">
+     <p><b>Reviewable Article</b>: A published scholarly work that is suitable for peer review. Examples of reviewable articles:</p>
+     <ol>
+      <li>A journal article that is published in the "Articles" section of an academic journal and has undergone peer review.</li>
+      <li>A journal article that is published in the "Articles" section of an academic journal, but <i>has not</i> undergone peer review.</li>
+     </ol>
+     <p>Examples of pieces of content that <i>are not</i> reviewable articles:</p>
+     <ol>
+      <li>A journal article that is published in the "Literature Reviews" section of an academic journal. Review articles are typically not subject to peer review.</li>
+      <li>A note from the editors published alongside peer-reviewed content. Notes from the editors are typically not subject to peer review.</li>
+     </ol>
+     <p>The Publication Facts Label should <i>only</i> be displayed on a <a href="#reviewable-article">Reviewable Article</a>.</p>
+    </li>
+    <li id="repository">
+     <b>Repository</b>: The stand-alone collection of published scholarly content to which the Publication Facts Label is being applied. This is the collection of content for which statistics may be contributed upstream to the Integrity Initiative; see <a href="#contributing-to-statistics">Contributing to Statistics</a> for details.
+    </li>
+   </ul>
+   <h2>Fields &amp; Calculations</h2>
+   <ol>
+    <li><strong><a href="#pfl-peer-reviewers">Peer reviewers</a></strong>: After this text, indicate the total number of peer reviewers who have provided reviews for this article. (If a single reviewer has reviewed the article in multiple rounds, they are only counted once.)</li>
+    <li><strong><a href="#pfl-reviewer-profiles">Reviewer profiles</a></strong>: If the platform provides information about reviewer profiles, this text should be followed by "Yes", which should be a link to where the profiles can be viewed. If not, use the text "Reviewer profiles: N/A" to indicate "not applicable".</li>
+    <li><strong><a href="#pfl-data-availability">Data availability</a></strong>: If the platform provides author data availability statements, this text should be followed by "Yes", which should be a link to where the statements can be found. If not, use the text "Data availability: N/A" to indicate "not applicable".</li>
+    <li><p><strong><a href="#pfl-external-funding">External funding</a></strong>: This area indicates whether funding data is supported by the platform, and if so, whether it is available for this article. It can appear as follows:</p>
      <ul>
-      <li id="reviewable-article">
-       <p><b>Reviewable Article</b>: A published scholarly work that is suitable for peer review. Examples of reviewable articles:</p>
-       <ol>
-        <li>A journal article that is published in the "Articles" section of an academic journal and has undergone peer review.</li>
-        <li>A journal article that is published in the "Articles" section of an academic journal, but <i>has not</i> undergone peer review.</li>
-       </ol>
-       <p>Examples of pieces of content that <i>are not</i> reviewable articles:</p>
-       <ol>
-        <li>A journal article that is published in the "Literature Reviews" section of an academic journal. Review articles are typically not subject to peer review.</li>
-        <li>A note from the editors published alongside peer-reviewed content. Notes from the editors are typically not subject to peer review.</li>
-       </ol>
-       <p>The Publication Facts Label should <i>only</i> be displayed on a <a href="#reviewable-article">Reviewable Article</a>.</p>
-      </li>
-      <li id="repostiory">
-       <b>Repository</b>: The stand-alone collection of published scholarly content to which the Publication Facts Label is being applied. This is the collection of content for which statistics may be contributed upstream to the Integrity Initiative; see <a href="#contributing-to-statistics">Contributing to Statistics</a> for details.
-      </li>
+     <li>If the platform does not support information about external funders, it should read <strong>External funding: N/A</strong>.</li>
+     <li>If the platform supports funding information and it has been entered for this article, it should read <strong>External funding: Yes</strong>, and the "Yes" should link to where the funding data is presented.</li>
+      <li>If the platform supports funding information but none has been entered for this article, it should read <strong>External funding: No</strong>.</li>
      </ul>
-     <h2>Fields &amp; Calculations</h2>
-      <ol>
-       <li><strong><a href="#pfl-peer-reviewers">Peer reviewers</a></strong>: After this text, indicate the total number of peer reviewers who have provided reviews for this article. (If a single reviewer has reviewed the article in multiple rounds, they are only counted once.)</li>
-       <li><strong><a href="#pfl-reviewer-profiles">Reviewer profiles</a></strong>: If the platform provides information about reviewer profiles, this text should be followed by "Yes", which should be a link to where the profiles can be viewed. If not, use the text "Reviewer profiles: N/A" to indicate "not applicable".</li>
-       <li><strong><a href="#pfl-data-availability">Data availability</a></strong>: If the platform provides author data availability statements, this text should be followed by "Yes", which should be a link to where the statements can be found. If not, use the text "Data availability: N/A" to indicate "not applicable".</li>
-       <li><p><strong><a href="#pfl-external-funding">External funding</a></strong>: This area indicates whether funding data is supported by the platform, and if so, whether it is available for this article. It can appear as follows:</p>
-        <ul>
-        <li>If the platform does not support information about external funders, it should read <strong>External funding: N/A</strong>.</li>
-        <li>If the platform supports funding information and it has been entered for this article, it should read <strong>External funding: Yes</strong>, and the "Yes" should link to where the funding data is presented.</li>
-         <li>If the platform supports funding information but none has been entered for this article, it should read <strong>External funding: No</strong>.</li>
-        </ul>
-       </li>
-       <li><strong><a href="#pfl-articles-accepted">Articles accepted</a></strong>: After this text, include the percentage of <a href="#reviewable-article">reviewable articles</a> in this repository that are accepted for publication.</a></li>
-       <li><strong><a href="#pfl-days-to-publication">Days to publication</a></strong>: After this text, include number of days between the author's initial submission of this work in its current form and the date it was first published online.</a></li>
-       <li><strong><a href="#pfl-heading-indexed-in">Indexed in</a></strong>: After this text, list (in as brief a form as possible) the major indexes in which this content appears. Each entry in the list should be a link to the article's record in the index. If that is not possible, link as closely as possible to the individual resource -- for example, to search results by the submission's DOI or title.</li>
-       <li><strong><a href="#pfl-editor-and-editorial-board">Editor &amp; editorial board</a></strong>: After this text, link to a page listing the editorial board's profiles. If the platform supports verified ORCID identifiers for the editorial board, include the ORCID icon in compliance with ORCID's <a href="https://info.orcid.org/brand-guidelines/">brand guidelines</a>.</li>
-       <li><strong><a href="#pfl-society">Society</a></strong>: After this text, include the name of the academic society (if any) involved in the publication of this journal. If possible, link this text to the society's website. If the platform does not support designating an academic society, use the text "N/A" to indicate Not Available.</li>
-       <li><strong><a href="#pfl-publisher">Publisher</a></strong>: After this text, include the name of the journal's publisher. If possible, link this text to the publisher's website. If the platform does not support designating a publisher, use the text "N/A" to indicate Not Available.</li>
-      </ol>
-     <h2>Getting "Other articles" Statistics</h2>
-      <p>Current statistics can be downloaded from the <a href="https://github.com/pkp/integrity-initiative-data">pkp/integrity-initiative-data</a> repository. We recommend downloading on e.g. a daily or weekly basis and caching locally.</p>
-     <h2 id="contributing-to-statistics">Contributing to Statistics</h2>
-      (to be documented)
+    </li>
+    <li><p><strong><a href="#pfl-competing-interests">Competing interests</a></strong>: After this text, indicate whether Competing Interests are available for at least one of the article's authors. It can appear as follows:</p>
+     <ul>
+      <li>If the platform does not support author Competing Interest statements, it should read <strong>Competing interests: N/A</strong> (for Not Applicable).</li>
+      <li>If the platform supports author Competing Interest statements but none have been provided for this article, it should read <strong>Competing interests: No</strong>.</li>
+      <li>If the platform supports author Competing Interest statements and at least one has been proviuded, it should read <strong>Competing Interests: Yes</strong>, and the "Yes" should link to where the competing interest statement(s) are presented.</li>
+     </ul>
+    </li>
+    <li><strong><a href="#pfl-articles-accepted">Articles accepted</a></strong>: After this text, include the percentage of <a href="#reviewable-article">reviewable articles</a> in this repository that are accepted for publication.</a></li>
+    <li><strong><a href="#pfl-days-to-publication">Days to publication</a></strong>: After this text, include number of days between the author's initial submission of this work in its current form and the date it was first published online.</a></li>
+    <li><strong><a href="#pfl-heading-indexed-in">Indexed in</a></strong>: After this text, list (in as brief a form as possible) the major indexes in which this content appears. Each entry in the list should be a link to the article's record in the index. If that is not possible, link as closely as possible to the individual resource -- for example, to search results by the article's DOI or title.</li>
+    <li><strong><a href="#pfl-editor-and-editorial-board">Editor &amp; editorial board</a></strong>: After this text, link to a page listing the editorial board's profiles. If the platform supports verified ORCID identifiers for the editorial board, include the ORCID icon in compliance with ORCID's <a href="https://info.orcid.org/brand-guidelines/">brand guidelines</a>.</li>
+    <li><strong><a href="#pfl-society">Society</a></strong>: After this text, include the name of the academic society (if any) involved in the publication of this journal. If possible, link this text to the society's website. If the platform does not support designating an academic society, use the text "N/A" to indicate Not Available.</li>
+    <li><strong><a href="#pfl-publisher">Publisher</a></strong>: After this text, include the name of the journal's publisher. If possible, link this text to the publisher's website. If the platform does not support designating a publisher, use the text "N/A" to indicate Not Available.</li>
+   </ol>
+   <h2>Getting "Other articles" Statistics</h2>
+   <p>Current statistics can be downloaded from <a href="https://pkp.sfu.ca/ojs/pflStatistics.json">https://pkp.sfu.ca/ojs/pflStatistics.json</a>. We recommend downloading on e.g. a daily or weekly basis and caching locally. <strong>Statistics from your repository can be provided upstream when downloading these statistics; see the <a href="#contributing-to-statistics">Contributing to Statistics</a> section for details.</strong></p>
+   <p>The JSON file's elements can be interpreted as follows:</p>
+   <ul>
+    <li><code>pflNumAcceptedClass</code>: The acceptance rate, in percent, of comparable journals. Example: <code>18</code> to indicate an 18% acceptance rate.</li>
+    <li><code>pflReviewerCountClass</code>: Average number of peer reviewers per comparable articles. Example: <code>2.5</code> to indicate that comparable articles have been reviewed by an average of 2.5 individual peer reviewers.</li>
+    <li><code>pflCompetingInterestsPercentClass</code>: Percentage of comparable articles that provide at least one author Competing Interest statement with the published content. Example: <code>25</code> to indicate that 25% of comparable articles provided at least one author Competing Interest statement.</li>
+    <li><code>pflDataAvailabilityPercentClass</code>: Percentage of comparable articles that provide a Data Availability statement with the published content. Example: <code>40</code> to indicate that 40% of comparable articles provided at least one Competing Interest statement.</li>
+    <li><code>pflNumHaveFundersClass</code>: Percentage of comparable articles that provide funding data with the published content. Example: <code>20</code> to indicate that 20% of comparable articles indicated at least one funding source.</li>
+    <li><code>pflDaysToPublicationClass</code>: The average number of days between initial submission and first publication for comparable articles. Example: <code>240</code> to indicate that the average comparable submission took 240 days between submission and publication.</li>
+   </ul>
+   <h2 id="contributing-to-statistics">Contributing to Statistics</h2>
+   <p>Statistics from your repository can be provided upstream for inclusion in the "Other statistics" data by adding URL parameters when fetching the statistics.</p>
+   <p>Base URL: <code>https://pkp.sfu.ca/ojs/pflStatistics.json</code></p>
+   <p>Additional parameters:</p>
+   <ul>
+    <li><code>platform</code>: A unique name for the platform. Example: <code>ojs</code> to indicate Open Journal Systems.</li>
+    <li><code>version</code>: Version indicator for the Publication Facts Label integration. This indicator should adhere to <a href="https://semver.org/">semver</a> conventions.</li>
+    <li><code>journalUrl</code>: A URL to the <a href="#repository">Repository</a>'s homepage.</li>
+    <li><code>pflNumAcceptedClass</code>: The number of published <a href="#reviewable-article">Reviewable Articles</a> in the <a href="#repository">Repository</a>. For example, <code>153</code> would indicate that 153 Reviewable Articles were published.</li>
+    <li><code>pflReviewerCountClass</code>: The average number of completed peer reviews per published <a href="#reviewable-article">Reviewable Article</a> in the <a href="#repository">Repository</a>.</li>
+    <li><code>pflCompetingInterestsClass</code>: The number of published <a href="#reviewable-article">Reviewable Articles</a> in the <a href="#repository">Repository</a> that have at least one author Competing Interest statement available. For example, <code>123</code> would indicate that there are 123 published Reviewable Articles with at least one author Competing Interest statement for each article with details available via the website. Platforms not supporting this metric should supply the text "N/A" for Not Applicable.</li>
+    <li><code>pflDataAvailabilityClass</code>: The number of published <a href="#reviewable-article">Reviewable Articles</a> in the <a href="#repository">Repository</a> that have a published data availability statement. For example, <code>58</code> would indicate that there are 58 published Reviewable Articles with posted Data Availability statements. Platforms not supporting this metric should supply the text "N/A" for Not Applicable.</li>
+    <li><code>pflNumHaveFundersClass</code>: The number of published <a href="#reviewable-article">Reviewable Articles</a> in the <a href="#repository">Repository</a> that have at least one grand funder identified. For example, <code>141</code> would indicate that there are 141 published Reviewable Articles with at least one grant funder for each article with details available via the website. Platforms not supporting this metric should supply the text "N/A" for Not Applicable.</li>
+    <li><code>pflDaysToPublicationClass</code>: The average number of days between submission and publication for the published <a href="#reviewable-article">Reviewable Articles</a> in the <a href="#repository">Repository</a>. For example, a value of <code>150</code> indicates that on average, it took 150 days from the article submission to publication.</li>
+    <li><code>reviewableSubmissionsCount</code>: The number of <a href="#reviewable-article">Reviewable Articles</a> in the <a href="#repository">Repository</a>. <strong>Note that these are not necessarily published.</strong> For example, the Acceptance Rate for the Repository may be calculated as the ratio of <code>pflNumAcceptedClass</code> to <code>reviewableSubmissionsCount</code>.</li>
+    <li><code>issn</code>: The <strong>International Standard Serial Number</strong> for the journal. Online ISSNs are preferred to print ISSNs if both are available. This value is used to help disambiguate between participants in the Publication Facts Label.</li>
+   </ul>
+   <h3>Example</h3>
+   <pre>
+    curl -G \
+    -d "platform=ojs" \
+    -d "version=1.0.0.1" \
+    -d "journalUrl=https://publisher.test/journal" \
+    -d "pflNumAcceptedClass=153" \
+    -d "pflReviewerCountClass=2.5" \
+    -d "pflCompetingInterestsClass=123" \
+    -d "pflDataAvailabilityClass=58" \
+    -d "pflNumHaveFundersClass=141" \
+    -d "pflDaysToPublicationClass=150" \
+    -d "reviewableSubmissionsCount=192" \
+    -d "issn=1234-5678" \
+    https://pkp.sfu.ca/ojs/pflStatistics.json
+   </pre>
   </div>
 
  </body>
