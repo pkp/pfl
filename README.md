@@ -6,7 +6,7 @@ Technical specifications and a reference implementation of the Publication Facts
 To view the reference implementation of the Pulication Facts Label:
 
 1. Clone the repository to your local machine
-2. Open `pfl.html` in your browser.
+2. Open `index.html` in your browser.
 
 ## Implementation
 
