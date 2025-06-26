@@ -28,9 +28,8 @@ class PFL extends HTMLElement {
         publisher: "Publisher",
         informationFooter: "To learn about these publication facts, click",
         informationIcon: "Publication facts information page.",
-        maintainedPF: "PF",
-        maintainedBy: "maintained by",
-        maintainedPKP: "Public  Knowledge Project",
+        maintainedByPKP:
+          '<b>PF</b> is maintained by the <a href="https://pkp.sfu.ca" target="_blank">Public Knowledge Project</a>',
       },
       values: {
         // Peer reviewer data
@@ -132,8 +131,7 @@ class PFL extends HTMLElement {
           font-variation-settings: "wdth" 100;
           font-weight: 350;
           font-size: 14px;
-          max-width: fit-content;
-          min-width: fit-content;
+          max-width: 260px;
           color: #000;
           margin-bottom: calc(1.4 * var(--pfl-base-font-size) * 1px);
         }
@@ -247,6 +245,9 @@ class PFL extends HTMLElement {
 
         .pfl-list-item {
           margin-inline-start: calc(0.2 * var(--pfl-base-font-size) * 1px);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .pfl-bold {
@@ -591,6 +592,7 @@ class PFL extends HTMLElement {
                 </dt>
                 <dd class="pfl-list-item" data-publisher="true">
                   <span
+                    title="pflPublisherName"
                     data-value="pflPublisherName"
                     data-wrap-link="pflPublisherUrl"
                   ></span>
@@ -608,15 +610,7 @@ class PFL extends HTMLElement {
                     data-alt="informationIcon"
                 /></a>
               </p>
-              <p>
-                <b>
-                  <span data-label="maintainedPF"></span>
-                </b>
-                <span data-label="maintainedBy"></span>
-                <a href="https://pkp.sfu.ca" target="_blank">
-                  <span data-label="maintainedPKP"></span>
-                </a>
-              </p>
+              <p data-html="maintainedByPKP"></p>
             </div>
           </div>
         </div>
@@ -635,11 +629,20 @@ class PFL extends HTMLElement {
       });
     }
 
+    // Render html labels (mtaintainedByPkp)
+    shadowRoot.querySelectorAll("[data-html]").forEach((span) => {
+      const valueKey = span.getAttribute("data-html");
+      if (this._data.labels[valueKey]) {
+        span.innerHTML = this._data.labels[valueKey];
+      }
+    });
+
     // Render values
     shadowRoot.querySelectorAll("[data-value]").forEach((span) => {
       const valueKey = span.getAttribute("data-value");
       if (this._data.values[valueKey]) {
         span.textContent = this._data.values[valueKey];
+        span.setAttribute("title", this._data.values[valueKey]);
       }
     });
 
