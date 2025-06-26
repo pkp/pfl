@@ -4,22 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PFL Web Component</title>
-    <style>
+    <style id="pfl-style-container">
      @font-face {
       font-family: "PFL Noto Sans";
       src: url(font/NotoSans-VariableFont_wdthwght.woff2) format("woff2");
       font-weight: 100 900;
      }
-    </style>
+</style><!-- indentation intentionally removed for presentation in integration section -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+  <script>
+   function showMarkup(sourceId, targetId, language) {
+     var markup = document.getElementById(sourceId).cloneNode(true);
+     markup.removeAttribute('id');
+     document.getElementById(targetId).innerHTML = hljs.highlight(markup.outerHTML, {language: language}).value;
+   }
+  </script>
   </head>
   <body>
    <div style="float: right;">
    <!-- Custom element usage -->
-   <publication-facts-label></publication-facts-label>
+   <publication-facts-label id="pfl-element-container"></publication-facts-label>
 
    <!-- Load the web component JavaScript -->
-   <script src="js/pfl.js"></script>
-   <script>
+   <script id="pfl-include-container" src="js/pfl.js"></script>
+   <script id="pfl-script-container">
     // Wait for the component to be defined
     window.addEventListener("DOMContentLoaded", () => {
       const pfl = document.querySelector("publication-facts-label");
@@ -105,7 +117,7 @@
         },
       };
     });
-   </script>
+</script>
   </div>
   <div>
    <h1>Technical Specifications</h1>
@@ -201,6 +213,33 @@
     https://pkp.sfu.ca/ojs/pflStatistics.json
    </pre>
   </div>
-
+  <h2>Integration</h2>
+  <p>The Publication Facts Label is integrated into a publishing platform as a <a href="https://en.wikipedia.org/wiki/Web_Components">Web Component</a> whose components are included in this repository. The steps for integration are:</p>
+  <ol>
+   <li>
+    Add styling to the page to include the appropriate web font:
+    <pre id="pfl-style-container-mirror"></pre>
+    <script type="text/javascript">
+     showMarkup('pfl-style-container', 'pfl-style-container-mirror', 'css');
+    </script>
+   </li>
+   <li>
+    <p>Include an element in the page markup where you wish the Publication Facts Label to appear:</p>
+    <pre id="pfl-element-container-mirror"></pre>
+    <script type="text/javascript">
+     showMarkup('pfl-element-container', 'pfl-element-container-mirror', 'html');
+    </script>
+   </li>
+   <li>
+    <p>Add Javascript to configure and present the Publication Facts Label web component:</p>
+    <pre id="pfl-script-container-mirror"></pre>
+    <script type="text/javascript">
+     showMarkup('pfl-script-container', 'pfl-script-container-mirror', 'html');
+    </script>
+   </li>
+   <li>
+    Adjust the parameters to the Javascript in the previos step to include values from your platform!
+   </li>
+  </ol> 
   </body>
 </html>
