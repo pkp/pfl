@@ -28,8 +28,6 @@ class PFL extends HTMLElement {
         publisher: "Publisher",
         informationFooter: "To learn about these publication facts, click",
         informationIcon: "Publication facts information page.",
-        maintainedByPKP:
-          '<b>PF</b> is maintained by the <a href="https://pkp.sfu.ca" target="_blank">Public Knowledge Project</a>',
       },
       values: {
         // Peer reviewer data
@@ -279,6 +277,7 @@ class PFL extends HTMLElement {
           padding-top: calc(0.4 * var(--pfl-base-font-size) * 1px);
           display: inline-block;
           width: 100%;
+          text-align: center;
         }
 
         .publication-facts-label #pfl-table-footer p {
@@ -610,7 +609,6 @@ class PFL extends HTMLElement {
                     data-alt="informationIcon"
                 /></a>
               </p>
-              <p data-html="maintainedByPKP"></p>
             </div>
           </div>
         </div>
