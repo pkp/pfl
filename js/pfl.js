@@ -6,48 +6,25 @@ class PFL extends HTMLElement {
     this._ready = false;
     this._data = {
       baseUrl: "", // Empty string for current directory
-      labels: {
-        publicationFacts: "Publication Facts",
-        metric: "Metric",
-        thisArticle: "This Article",
-        otherArticles: "Other articles",
-        peerReviewers: "Peer reviewers",
-        reviewerProfiles: "Reviewer profiles",
-        authorStatements: "Author statements",
-        dataAvailability: "Data availability",
-        funders: "External funding",
-        competingInterests: "Competing interests",
-        forThisJournal: "This journal",
-        otherJournals: "Other journals",
-        articlesAccepted: "Articles accepted",
-        daysToPublication: "Days to publication",
-        indexedIn: "Indexed in",
-        editorAndBoard: "Editor & editorial board",
-        profiles: "profiles",
-        academicSociety: "Society",
-        publisher: "Publisher",
-        informationFooter: "To learn about these publication facts, click",
-        informationIcon: "Publication facts information page.",
-      },
+      labels: {},
       values: {
         // Peer reviewer data
         pflReviewerCount: "2",
         pflReviewerCountClass: "2.5",
         pflPeerReviewersUrl: "https://example.com/reviewers",
-        pflPeerReviewers: "", // N/A or empty if the url is available
         // Data availability
-        pflDataAvailabilityValue: "N/A", // Can be "N/A", "Yes", "No"
-        pflDataAvailabilityValueUrl: "https://", // Can be "N/A", "Yes", "No"
+        pflDataAvailabilityValue: "NA", // Can be "NA", "YES", "NO"
+        pflDataAvailabilityValueUrl: "",
 
         pflDataAvailabilityPercentClass: "40%",
 
         // Funding data
-        pflFundersValue: "Yes", // Can be "N/A", "Yes", "No"
+        pflFundersValue: "YES", // Can be "NA", "YES", "NO"
         pflFundersValueUrl: "#funding-data",
         pflNumHaveFundersClass: "20%",
 
         // Competing interests
-        pflCompetingInterestsValue: "Yes", // Can be "N/A", "Yes", "No"
+        pflCompetingInterestsValue: "YES", // Can be "NA", "YES", "NO"
         pflCompetingInterestsValueUrl: "#author-list",
         pflCompetingInterestsPercentClass: "25%",
 
@@ -81,12 +58,20 @@ class PFL extends HTMLElement {
         // Publisher
         pflPublisherName: "Example Publisher",
         pflPublisherUrl: "https://example-publisher.com",
+        pflInfoUrl: "https://pkp.sfu.ca/information-on-pfl/",
       },
     };
   }
 
   set data(value) {
-    Object.assign(this._data, value);
+    const newData = Object.assign({}, this._data, value);
+
+    // Calculated data for special cases
+    // Peer reviewers, when there is no URL - it should show N/A next to it
+    newData.values.pflPeerReviewers = newData.values.pflPeerReviewersUrl
+      ? null
+      : "NA";
+    Object.assign(this._data, newData);
     this._ready = true;
     this.render();
   }
@@ -423,8 +408,15 @@ class PFL extends HTMLElement {
 
             <div class="pfl-indent pfl-body-row">
               <p>
-                <span data-label="reviewerProfiles"></span>&nbsp;
-                <span data-value="pflPeerReviewers"></span>
+                <span
+                  data-label="reviewerProfiles"
+                  data-wrap-link="pflPeerReviewersUrl"
+                ></span
+                >&nbsp;
+                <span
+                  data-value="pflPeerReviewers"
+                  data-hash="reviewer-profiles"
+                ></span>
               </p>
             </div>
 
@@ -451,6 +443,7 @@ class PFL extends HTMLElement {
                   <span
                     data-value="pflDataAvailabilityValue"
                     data-wrap-link="pflDataAvailabilityValueUrl"
+                    data-hash="data-availability"
                   ></span>
                 </div>
                 <div
@@ -461,12 +454,13 @@ class PFL extends HTMLElement {
               </div>
               <div role="row" class="pfl-body-row">
                 <div role="rowheader" class="pfl-indent">
-                  <span data-label="funders"></span>&nbsp;
+                  <span data-label="externalFunding"></span>&nbsp;
                 </div>
                 <div role="cell" class="pfl-this-cell">
                   <span
                     data-value="pflFundersValue"
                     data-wrap-link="pflFundersValueUrl"
+                    data-hash="funding"
                   ></span>
                 </div>
                 <div
@@ -483,6 +477,7 @@ class PFL extends HTMLElement {
                   <span
                     data-value="pflCompetingInterestsValue"
                     data-wrap-link="pflCompetingInterestsValueUrl"
+                    data-hash="competing-interests"
                   ></span>
                 </div>
                 <div
@@ -518,6 +513,7 @@ class PFL extends HTMLElement {
                   role="cell"
                   class="pfl-this-cell pfl-bold"
                   data-value="pflAcceptedPercent"
+                  data-hash="articles-accepted"
                 ></div>
                 <div
                   role="cell"
@@ -534,6 +530,7 @@ class PFL extends HTMLElement {
                   role="cell"
                   class="pfl-this-cell"
                   data-value="pflDaysToPublication"
+                  data-hash="days-to-publication"
                 ></div>
                 <div
                   role="cell"
@@ -581,6 +578,7 @@ class PFL extends HTMLElement {
                   <span
                     data-value="pflAcademicSociety"
                     data-wrap-link="pflAcademicSocietyUrl"
+                    data-hash="society"
                   ></span>
                 </dd>
               </div>
@@ -594,6 +592,7 @@ class PFL extends HTMLElement {
                     title="pflPublisherName"
                     data-value="pflPublisherName"
                     data-wrap-link="pflPublisherUrl"
+                    data-hash="publisher"
                   ></span>
                 </dd>
               </div>
@@ -602,12 +601,12 @@ class PFL extends HTMLElement {
             <div id="pfl-table-footer">
               <p>
                 <span data-label="informationFooter"></span>
-                <a href="https://pkp.sfu.ca/information-on-pfl/"
-                  ><img
-                    class="pfl-info-icon"
-                    data-src="info_icon.svg"
-                    data-alt="informationIcon"
-                /></a>
+                <img
+                  class="pfl-info-icon"
+                  data-src="info_icon.svg"
+                  data-alt="informationIcon"
+                  data-wrap-link="pflInfoUrl"
+                />
               </p>
             </div>
           </div>
@@ -616,6 +615,27 @@ class PFL extends HTMLElement {
     `;
 
     const shadowRoot = this.shadowRoot;
+
+    function wrapWithLink(element, url, hash = null) {
+      if (url) {
+        const a = document.createElement("a");
+
+        if (!url.includes("#")) {
+          a.target = "_blank";
+        }
+
+        if (hash) {
+          a.href = url + "#" + hash;
+        } else {
+          a.href = url;
+        }
+
+        a.rel = "noopener noreferrer";
+
+        element.parentNode.insertBefore(a, element);
+        a.appendChild(element);
+      }
+    }
 
     // Render labels
     for (const [key, value] of Object.entries(this._data.labels)) {
@@ -627,29 +647,23 @@ class PFL extends HTMLElement {
       });
     }
 
-    // Render html labels (mtaintainedByPkp)
-    shadowRoot.querySelectorAll("[data-html]").forEach((span) => {
-      const valueKey = span.getAttribute("data-html");
-      if (this._data.labels[valueKey]) {
-        span.innerHTML = this._data.labels[valueKey];
-      }
-    });
-
     // Render values
     shadowRoot.querySelectorAll("[data-value]").forEach((span) => {
       const valueKey = span.getAttribute("data-value");
-      if (this._data.values[valueKey]) {
-        span.textContent = this._data.values[valueKey];
-        span.setAttribute("title", this._data.values[valueKey]);
+      const value = this._data.values[valueKey];
+      const valueTranslated = this.translatePlaceholders(value);
+      // null or undefined
+      if (valueTranslated != null) {
+        span.textContent = valueTranslated;
+        span.setAttribute("title", valueTranslated);
+        // wrap for N/A links to the docs
+        if (value === "NA") {
+          const hashValue = span.getAttribute("data-hash");
+
+          wrapWithLink(span, this._data.values.pflInfoUrl, hashValue);
+        }
       }
     });
-
-    for (const [key, value] of Object.entries(this._data.values)) {
-      const elements = shadowRoot.querySelectorAll(`[data-value="${key}"]`);
-      elements.forEach((el) => {
-        el.textContent = value;
-      });
-    }
 
     // Handle images
     shadowRoot.querySelectorAll("[data-src]").forEach((img) => {
@@ -667,19 +681,10 @@ class PFL extends HTMLElement {
     });
 
     // Handle wrapping in the link if link available
-    shadowRoot.querySelectorAll("[data-wrap-link]").forEach((span) => {
-      const hrefKey = span.getAttribute("data-wrap-link");
+    shadowRoot.querySelectorAll("[data-wrap-link]").forEach((element) => {
+      const hrefKey = element.getAttribute("data-wrap-link");
       if (this._data.values[hrefKey]) {
-        const a = document.createElement("a");
-
-        a.href = this._data.values[hrefKey];
-        if (!this._data.values[hrefKey].includes("#")) {
-          a.target = "_blank";
-        }
-        a.rel = "noopener noreferrer";
-
-        span.parentNode.insertBefore(a, span);
-        a.appendChild(span);
+        wrapWithLink(element, this._data.values[hrefKey]);
       }
     });
 
@@ -722,20 +727,6 @@ class PFL extends HTMLElement {
         el.style.display = "none";
       }
     });
-
-    // Handle reviewer profiles link
-    const reviewerProfilesLabel = shadowRoot.querySelector(
-      '[data-label="reviewerProfiles"]'
-    );
-    if (reviewerProfilesLabel) {
-      if (this._data.values.pflPeerReviewersUrl) {
-        const link = document.createElement("a");
-        link.href = this._data.values.pflPeerReviewersUrl;
-        link.target = "_blank";
-        link.textContent = reviewerProfilesLabel.textContent;
-        reviewerProfilesLabel.replaceWith(link);
-      }
-    }
 
     // Add event listener for dropdown toggle
     const toggleButton = this.shadowRoot.getElementById(
@@ -784,6 +775,18 @@ class PFL extends HTMLElement {
 
   connectedCallback() {
     this.render();
+  }
+
+  translatePlaceholders(value) {
+    if (value === "NA") {
+      return this._data.labels.notAvailable;
+    } else if (value === "YES") {
+      return this._data.labels.yes;
+    } else if (value === "NO") {
+      return this._data.labels.no;
+    }
+
+    return value;
   }
 }
 
