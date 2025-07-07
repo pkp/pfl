@@ -36,85 +36,81 @@
     window.addEventListener("DOMContentLoaded", () => {
       const pfl = document.querySelector("publication-facts-label");
 
-      pfl.data = {
-        baseUrl: "", // Empty string for current directory
-        labels: {
-          publicationFacts: "Publication Facts",
-          metric: "Metric",
-          thisArticle: "This Article",
-          otherArticles: "Other articles",
-          peerReviewers: "Peer reviewers",
-          reviewerProfiles: "Reviewer profiles",
-          authorStatements: "Author statements",
-          dataAvailability: "Data availability",
-          funders: "External funding",
-          competingInterests: "Competing interests",
-          forThisJournal: "This journal",
-          otherJournals: "Other journals",
-          articlesAccepted: "Articles accepted",
-          daysToPublication: "Days to publication",
-          indexedIn: "Indexed in",
-          editorAndBoard: "Editor & editorial board",
-          profiles: "profiles",
-          academicSociety: "Society",
-          publisher: "Publisher",
-          informationFooter: "To learn about these publication facts, click",
-          informationIcon: "Publication facts information page.",
-        },
-        values: {
-          // Peer reviewer data
-          pflReviewerCount: "2",
-          pflReviewerCountClass: "2.5",
-          pflPeerReviewersUrl: "https://example.com/reviewers",
-          pflPeerReviewers: "", // N/A or empty if the url is available
-          // Data availability
-          pflDataAvailabilityValue: "N/A", // Can be "N/A", "Yes", "No"
-          pflDataAvailabilityValueUrl: "https://", // Can be "N/A", "Yes", "No"
+    const pflData = {
+      baseUrl: "", // Empty string for current directory
+      locale: "en_US",
+      labels: {
+      },
+      values: {
+        // Peer reviewer data
+        pflReviewerCount: "2",
+        pflReviewerCountClass: "2.5",
+        pflPeerReviewersUrl: "https://example.com/reviewers",
+        // Data availability
+        pflDataAvailabilityValue: "NA", // Can be "NA", "YES", "NO"
+        pflDataAvailabilityValueUrl: "",
 
-          pflDataAvailabilityPercentClass: "40%",
+        pflDataAvailabilityPercentClass: "40%",
 
-          // Funding data
-          pflFundersValue: "Yes", // Can be "N/A", "Yes", "No"
-          pflFundersValueUrl: "#funding-data",
-          pflNumHaveFundersClass: "20%",
+        // Funding data
+        pflFundersValue: "YES", // Can be "NA", "YES", "NO"
+        pflFundersValueUrl: "#funding-data",
+        pflNumHaveFundersClass: "20%",
 
-          // Competing interests
-          pflCompetingInterestsValue: "Yes", // Can be "N/A", "Yes", "No"
-          pflCompetingInterestsValueUrl: "#author-list",
-          pflCompetingInterestsPercentClass: "25%",
+        // Competing interests
+        pflCompetingInterestsValue: "YES", // Can be "NA", "YES", "NO"
+        pflCompetingInterestsValueUrl: "#author-list",
+        pflCompetingInterestsPercentClass: "25%",
 
-          // Journal statistics
-          pflAcceptedPercent: "15%",
-          pflNumAcceptedClass: "18%",
-          pflDaysToPublication: "180",
-          pflDaysToPublicationClass: "240",
+        // Journal statistics
+        pflAcceptedPercent: "15%",
+        pflNumAcceptedClass: "18%",
+        pflDaysToPublication: "180",
+        pflDaysToPublicationClass: "240",
 
-          // Index list as array
-          pflIndexList: [
-            {
-              url: "https://doaj.org/toc/1234-5678",
-              name: "DOAJ",
-              description: "Directory of Open Access Journals",
-            },
-            {
-              url: "https://scholar.google.com",
-              name: "Google Scholar",
-              description: "Google Scholar Index",
-            },
-          ],
+        // Index list as array
+        pflIndexList: [
+          {
+            url: "https://doaj.org/toc/1234-5678",
+            name: "DOAJ",
+            description: "Directory of Open Access Journals",
+          },
+          {
+            url: "https://scholar.google.com",
+            name: "Google Scholar",
+            description: "Google Scholar Index",
+          },
+        ],
 
-          // Editorial team URL
-          editorialTeamUrl: "/about/editorialTeam",
+        // Editorial team URL
+        editorialTeamUrl: "/about/editorialTeam",
 
-          // Academic society
-          pflAcademicSociety: "Example Academic Society",
-          pflAcademicSocietyUrl: "https://example-society.org",
+        // Academic society
+        pflAcademicSociety: "Example Academic Society",
+        pflAcademicSocietyUrl: "https://example-society.org",
 
-          // Publisher
-          pflPublisherName: "Example Publisher",
-          pflPublisherUrl: "https://example-publisher.com",
-        },
-      };
+        // Publisher
+        pflPublisherName: "Example Publisher",
+        pflPublisherUrl: "https://example-publisher.com",
+        pflInfoUrl: "https://pkp.sfu.ca/information-on-pfl/",
+      },
+    };
+
+      const localeUrl = pflData.baseUrl + '/locale/' + pflData.locale + '.json';
+        fetch(localeUrl)
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(labels) {
+            var pfl = document.querySelector('publication-facts-label');
+            pfl.data = Object.assign({}, pflData, {labels: labels});
+          })
+          .catch(function(err) {
+            console.warn('PFL: failed to load translations', err);
+          });
+
+      pfl.data = {};
+      
     });
 </script>
   </div>
