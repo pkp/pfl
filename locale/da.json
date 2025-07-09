@@ -1,1 +1,21 @@
-{}
+{
+    "otherArticles": "Andre artikler",
+    "peerReviewers": "Bedømmere",
+    "reviewerProfiles": "Bedømmer profil",
+    "forThisJournal": "Dette tidsskrift",
+    "otherJournals": "Andre tidsskrifter",
+    "articlesAccepted": "Accepterede artikler",
+    "publisher": "Udgiver",
+    "informationFooter": "For at få mere at vide om disse publikationsfakta, klik",
+    "informationIcon": "Informationsside om publikationsfakta.",
+    "notAvailable": "Ikke tilgængelig",
+    "yes": "Ja",
+    "no": "Nej",
+    "thisArticle": "Denne artikel",
+    "indexedIn": "Indekseret i",
+    "profiles": "profiler",
+    "dataAvailability": "Data tilgængelighed",
+    "academicSociety": "Forening",
+    "externalFunding": "Ekstern støtte",
+    "competingInterests": "Konkurrerende interesser"
+}
