@@ -1,1 +1,26 @@
-{}
+{
+    "metric": "Metrika",
+    "thisArticle": "Ta članek",
+    "otherArticles": "Ostali članki",
+    "peerReviewers": "Recenzije",
+    "reviewerProfiles": "Profili recenzentov",
+    "authorStatements": "Izjave avtorjev",
+    "dataAvailability": "Razpoložljivost podatkov",
+    "externalFunding": "Zunanje financiranje",
+    "competingInterests": "Nasprotje interesov",
+    "forThisJournal": "Ta revija",
+    "otherJournals": "Ostale revije",
+    "articlesAccepted": "Sprejeti članki",
+    "daysToPublication": "Število dni do objave",
+    "indexedIn": "Indeksirano pri",
+    "editorAndBoard": "Uredništvo in uredniški odbor",
+    "profiles": "profili",
+    "academicSociety": "Akademska družba",
+    "publisher": "Izdajatelj",
+    "informationFooter": "Za informacije o objavi kliknite",
+    "informationIcon": "Stran z informacijami o objavi.",
+    "notAvailable": "Ni na voljo",
+    "yes": "Da",
+    "no": "Ne",
+    "publicationFacts": "Informacije o objavi"
+}
