@@ -1,1 +1,26 @@
-{}
+{
+    "publicationFacts": "Факти про публікацію",
+    "metric": "Метрика",
+    "thisArticle": "Ця стаття",
+    "otherArticles": "Інші статті",
+    "peerReviewers": "Рецензенти",
+    "reviewerProfiles": "Профілі рецензента",
+    "authorStatements": "Заяви автора",
+    "dataAvailability": "Доступність даних",
+    "externalFunding": "Зовнішнє фінансування",
+    "competingInterests": "Конфлікт інтересів",
+    "forThisJournal": "Цей журнал",
+    "daysToPublication": "Днів до опублікування",
+    "indexedIn": "Індексовано в",
+    "editorAndBoard": "Редактор і редакційна колегія",
+    "profiles": "профілі",
+    "publisher": "Видавець",
+    "informationFooter": "Щоб дізнатися про ці факти про публікацію, натисніть",
+    "informationIcon": "Сторінка з інформацією про факти про публікацію.",
+    "notAvailable": "Н/д",
+    "yes": "Так",
+    "no": "Ні",
+    "otherJournals": "Інші журнали",
+    "articlesAccepted": "Прийняті статті",
+    "academicSociety": "Товариство"
+}
