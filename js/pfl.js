@@ -197,7 +197,7 @@ class PFL extends HTMLElement {
 
         .pfl-header-row {
           border-top: 8px solid black;
-          border-bottom: 0.25px solid #000;
+          border-bottom: 3px solid #000;
           padding-top: calc(0.18 * var(--pfl-base-font-size) * 1px);
           padding-bottom: calc(0.12 * var(--pfl-base-font-size) * 1px);
           font-size: calc(0.8 * var(--pfl-base-font-size) * 1px);
@@ -206,7 +206,7 @@ class PFL extends HTMLElement {
         }
 
         .pfl-body-row {
-          border-bottom: 0.25px solid #000000;
+          border-bottom: 1px solid #000000;
           font-size: calc(0.9 * var(--pfl-base-font-size) * 1px);
          /* line-height: calc(1.6 * var(--pfl-base-font-size) * 1px);*/
           display: flex;
