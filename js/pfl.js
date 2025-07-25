@@ -11,7 +11,6 @@ class PFL extends HTMLElement {
         // Peer reviewer data
         pflReviewerCount: "2",
         pflReviewerCountClass: "2.5",
-        pflPeerReviewersUrl: "https://example.com/reviewers",
         // Data availability
         pflDataAvailabilityValue: "NA", // Can be "NA", "YES", "NO"
         pflDataAvailabilityValueUrl: "",
@@ -66,11 +65,6 @@ class PFL extends HTMLElement {
   set data(value) {
     const newData = Object.assign({}, this._data, value);
 
-    // Calculated data for special cases
-    // Peer reviewers, when there is no URL - it should show N/A next to it
-    newData.values.pflPeerReviewers = newData.values.pflPeerReviewersUrl
-      ? null
-      : "NA";
     Object.assign(this._data, newData);
     this._ready = true;
     this.render();
@@ -407,20 +401,6 @@ class PFL extends HTMLElement {
                   data-value="pflReviewerCountClass"
                 ></div>
               </div>
-            </div>
-
-            <div class="pfl-indent pfl-body-row">
-              <p>
-                <span
-                  data-label="reviewerProfiles"
-                  data-wrap-link="pflPeerReviewersUrl"
-                ></span
-                >&nbsp;
-                <span
-                  data-value="pflPeerReviewers"
-                  data-hash="reviewer-profiles"
-                ></span>
-              </p>
             </div>
 
             <h3 class="pfl-body-row">
