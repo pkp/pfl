@@ -292,6 +292,9 @@ class PFL extends HTMLElement {
           text-decoration: underline;
           color: #006798;
         }
+        a.wrapWithLink {
+            text-wrap: nowrap;
+        }
 
         button {
           height: fit-content;
@@ -556,18 +559,7 @@ class PFL extends HTMLElement {
 
             <dl>
               <div class="pfl-body-row pfl-orcid-icon">
-                <dt class="pfl-bold" data-label="editorAndBoard"></dt>
-                <dd class="pfl-list-item pfl-orcid-icon">
-                  <img
-                    data-src="orcid.svg"
-                    alt="ORCiD logo image"
-                    aria-hidden="true"
-                  />
-                  <span
-                    data-label="profiles"
-                    data-wrap-link="editorialTeamUrl"
-                  ></span>
-                </dd>
+                <dt class="pfl-bold" data-label-html="editorAndBoard"></dt>
               </div>
 
               <div class="pfl-body-row" data-show="pflAcademicSociety">
@@ -619,6 +611,7 @@ class PFL extends HTMLElement {
     function wrapWithLink(element, url, hash = null) {
       if (url) {
         const a = document.createElement("a");
+        a.setAttribute('class', 'wrapWithLink');
 
         if (!url.includes("#")) {
           a.target = "_blank";
@@ -639,28 +632,39 @@ class PFL extends HTMLElement {
 
     // Render labels
     for (const [key, value] of Object.entries(this._data.labels)) {
-      const elements = shadowRoot.querySelectorAll(`[data-label="${key}"]`);
-      elements.forEach((el) => {
+      shadowRoot.querySelectorAll(`[data-label="${key}"]`).forEach((el) => {
         if (typeof value === "string") {
           el.textContent = value;
+        }
+      });
+      shadowRoot.querySelectorAll(`[data-label-html="${key}"]`).forEach((el) => {
+        if (typeof value === "string") {
+          el.innerHTML = value;
         }
       });
     }
 
     // Render values
-    shadowRoot.querySelectorAll("[data-value]").forEach((span) => {
-      const valueKey = span.getAttribute("data-value");
+    shadowRoot.querySelectorAll("[data-value]").forEach((e) => {
+      const valueKey = e.getAttribute("data-value");
+      const attributeName = e.getAttribute("data-attribute");
       const value = this._data.values[valueKey];
       const valueTranslated = this.translatePlaceholders(value);
       // null or undefined
       if (valueTranslated != null) {
-        span.textContent = valueTranslated;
-        span.setAttribute("title", valueTranslated);
+        if (attributeName != null) {
+            // If an attribute name was specified using `data-attribute`, set it...
+            e.setAttribute(attributeName, valueTranslated);
+        } else {
+            // ...otherwise set the node value.
+            e.textContent = valueTranslated;
+        }
+        e.setAttribute("title", valueTranslated);
         // wrap for N/A links to the docs
         if (value === "NA") {
-          const hashValue = span.getAttribute("data-hash");
+          const hashValue = e.getAttribute("data-hash");
 
-          wrapWithLink(span, this._data.values.pflInfoUrl, hashValue);
+          wrapWithLink(e, this._data.values.pflInfoUrl, hashValue);
         }
       }
     });
