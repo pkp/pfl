@@ -285,6 +285,7 @@ class PFL extends HTMLElement {
         a {
           text-decoration: underline;
           color: #006798;
+          font-weight: 350 !important;
         }
         a.wrapWithLink {
             text-wrap: nowrap;
