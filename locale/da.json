@@ -1,19 +1,19 @@
 {
     "otherArticles": "Andre artikler",
     "peerReviewers": "Bedømmere",
-    "reviewerProfiles": "Bedømmer profil",
+    "reviewerProfiles": "Bedømmerprofiler",
     "forThisJournal": "Dette tidsskrift",
     "otherJournals": "Andre tidsskrifter",
     "articlesAccepted": "Accepterede artikler",
     "publisher": "Udgiver",
-    "informationFooter": "For at få mere at vide om disse publikationsfakta, klik",
-    "informationIcon": "Informationsside om publikationsfakta.",
+    "informationFooter": "For at få mere at vide om disse udgivelsesfakta, klik",
+    "informationIcon": "Informationsside om udgivelsesfakta.",
     "notAvailable": "Ikke tilgængelig",
     "yes": "Ja",
     "no": "Nej",
     "thisArticle": "Denne artikel",
     "indexedIn": "Indekseret i",
-    "dataAvailability": "Data tilgængelighed",
+    "dataAvailability": "Datatilgængelighed",
     "academicSociety": "Forening",
     "externalFunding": "Ekstern støtte",
     "competingInterests": "Konkurrerende interesser",
@@ -21,5 +21,5 @@
     "metric": "Metrik",
     "authorStatements": "Forfattererklæringer",
     "daysToPublication": "Dage til udgivelse",
-    "editorAndBoard": "Redaktør og redaktionsgruppe"
+    "editorAndBoard": "Redaktionsgruppe <a data-value=\"editorialTeamUrl\" data-attribute=\"href\">list</a>"
 }
