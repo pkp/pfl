@@ -19,5 +19,7 @@
     "competingInterests": "Konkurrerende interesser",
     "publicationFacts": "Udgivelsesfakta",
     "metric": "Metrik",
-    "authorStatements": "Forfattererklæringer"
+    "authorStatements": "Forfattererklæringer",
+    "daysToPublication": "Dage til udgivelse",
+    "editorAndBoard": "Redaktør og redaktionsgruppe"
 }
