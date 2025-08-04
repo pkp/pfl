@@ -1,1 +1,25 @@
-{}
+{
+    "thisArticle": "Este Artigo",
+    "publicationFacts": "Dados da Publicação",
+    "authorStatements": "Declarações do(s) autor(es)",
+    "dataAvailability": "Disponibilidade dos dados",
+    "externalFunding": "Financiamento externo",
+    "competingInterests": "Conflitos de interesse",
+    "forThisJournal": "Esta revista",
+    "otherJournals": "Outras revistas",
+    "daysToPublication": "Dias até a publicação",
+    "indexedIn": "Indexada em",
+    "academicSociety": "Sociedade acadêmica",
+    "publisher": "Editora",
+    "informationFooter": "Para saber mais sobre esses dados da publicação, clique",
+    "informationIcon": "Página de informações sobre a publicação.",
+    "notAvailable": "N/D",
+    "yes": "Sim",
+    "no": "Não",
+    "metric": "Métrica",
+    "otherArticles": "Outros artigos",
+    "peerReviewers": "Avaliadores",
+    "reviewerProfiles": "Perfis dos avaliadores",
+    "articlesAccepted": "Artigos aceitos",
+    "editorAndBoard": "Equipe editorial <a data-value=\"editorialTeamUrl\" data-attribute=\"href\">lista</a>"
+}
