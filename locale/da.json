@@ -12,8 +12,13 @@
     "no": "Nej",
     "thisArticle": "Denne artikel",
     "indexedIn": "Indekseret i",
-    "dataAvailability": "Data tilgængelighed",
+    "dataAvailability": "Datatilgængelighed",
     "academicSociety": "Forening",
-    "externalFunding": "Ekstern støtte",
-    "competingInterests": "Konkurrerende interesser"
+    "externalFunding": "Ekstern finansiering",
+    "competingInterests": "Konkurrerende interesser",
+    "publicationFacts": "Publikationsfakta",
+    "metric": "Metrik",
+    "authorStatements": "Forfattererklæringer",
+    "daysToPublication": "Dage til udgivelse",
+    "editorAndBoard": "Redaktionsgruppe <a data-value=\"editorialTeamUrl\" data-attribute=\"href\">list</a>"
 }
