@@ -1,1 +1,24 @@
-{}
+{
+    "metric": "Метрика",
+    "otherArticles": "Други статии",
+    "peerReviewers": "Рецензенти од колеги",
+    "authorStatements": "Изјави на автори",
+    "externalFunding": "Надворешно финансирање",
+    "competingInterests": "Конкурентни интереси",
+    "forThisJournal": "Ова списание",
+    "otherJournals": "Други списанија",
+    "articlesAccepted": "Прифатени статии",
+    "indexedIn": "Индексирано во",
+    "academicSociety": "Општество",
+    "publisher": "Издавач",
+    "informationFooter": "За да дознаете повеќе за овие факти за објавувањето, кликнете",
+    "informationIcon": "Страница со информации за фактите за објавувањето.",
+    "notAvailable": "Н/П",
+    "yes": "Да",
+    "no": "Не",
+    "publicationFacts": "Факти за објавување",
+    "thisArticle": "Оваа статија",
+    "dataAvailability": "Достапност на податоци",
+    "daysToPublication": "Денови до објавување",
+    "editorAndBoard": "Уреднички тим <a data-value=\"editorialTeamUrl\" data-attribute=\"href\">листа</a>"
+}
