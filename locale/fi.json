@@ -1,1 +1,24 @@
-{}
+{
+    "metric": "Mittari",
+    "forThisJournal": "Tämä julkaisu",
+    "publicationFacts": "Julkaisutiedot",
+    "thisArticle": "Tämä artikkeli",
+    "otherArticles": "Muut artikkelit",
+    "peerReviewers": "Vertaisarvioijat",
+    "authorStatements": "Kirjoittajan ilmoitukset",
+    "dataAvailability": "Data-aineiston saatavuus",
+    "externalFunding": "Ulkopuolinen rahoitus",
+    "competingInterests": "Sidonnaisuudet",
+    "otherJournals": "Muut julkaisut",
+    "articlesAccepted": "Hyväksytyt artikkelit",
+    "daysToPublication": "Päiviä julkaisuun",
+    "indexedIn": "Indeksoitu",
+    "editorAndBoard": "<a data-value=\"editorialTeamUrl\" data-attribute=\"href\">Toimituskunta</a>",
+    "academicSociety": "Seura",
+    "publisher": "Julkaisija",
+    "informationFooter": "Lue lisää näistä julkaisutiedoista",
+    "informationIcon": "Julkaisutietosivu.",
+    "notAvailable": "Ei saatavilla",
+    "yes": "Kyllä",
+    "no": "Ei"
+}
