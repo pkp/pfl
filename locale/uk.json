@@ -19,5 +19,6 @@
     "no": "Ні",
     "otherJournals": "Інші журнали",
     "articlesAccepted": "Прийняті статті",
-    "academicSociety": "Товариство"
+    "academicSociety": "Товариство",
+    "editorAndBoard": "Список <a data-value=\"editorialTeamUrl\" data-attribute=\"href\">членів редакції</a>"
 }
