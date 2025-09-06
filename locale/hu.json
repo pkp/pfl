@@ -1,1 +1,24 @@
-{}
+{
+    "metric": "Mérőszám",
+    "peerReviewers": "Lektorok",
+    "authorStatements": "Szerzői nyilatkozatok",
+    "externalFunding": "Külső finanszírozás",
+    "competingInterests": "Összeférhetetlenség",
+    "forThisJournal": "Ez a folyóirat",
+    "otherJournals": "Más folyóiratok",
+    "articlesAccepted": "Elfogadott cikkek",
+    "daysToPublication": "Napok a publikálásig",
+    "indexedIn": "Indexelt",
+    "editorAndBoard": "<a data-value=\"editorialTeamUrl\" data-attribute=\"href\">Szerkesztőség</a>",
+    "academicSociety": "Tudományos szervezet",
+    "publisher": "Kiadó",
+    "informationIcon": "Publikáció-adat információs oldal.",
+    "notAvailable": "N/A",
+    "yes": "Igen",
+    "no": "Nem",
+    "informationFooter": "Hogy többet megtudjon ezekről a publikációs adatokról, kattintson",
+    "publicationFacts": "Publikáció-adatlap",
+    "thisArticle": "Ez a cikk",
+    "otherArticles": "Más cikkek",
+    "dataAvailability": "Adatok elérhetősége"
+}
