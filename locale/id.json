@@ -1,1 +1,24 @@
-{}
+{
+    "metric": "Metrik",
+    "thisArticle": "Artikel ini",
+    "otherArticles": "Artikel lain",
+    "peerReviewers": "Reviewer",
+    "authorStatements": "Pernyataan Penulis",
+    "dataAvailability": "Ketersediaan data",
+    "competingInterests": "Konflik kepentingan",
+    "forThisJournal": "Jurnal ini",
+    "otherJournals": "Jurnal lain",
+    "indexedIn": "Diindeks pada",
+    "academicSociety": "Komunitas",
+    "publisher": "Penerbit",
+    "informationFooter": "Untuk mempelajari mengenai fakta publikasi, klik",
+    "informationIcon": "Halaman informasi fakta publikasi.",
+    "articlesAccepted": "Artikel yang diterima",
+    "daysToPublication": "Jumlah hari hingga terbit",
+    "notAvailable": "N/A",
+    "yes": "Ya",
+    "no": "Tidak",
+    "publicationFacts": "Fakta Publikasi",
+    "externalFunding": "Pendanaan dari luar",
+    "editorAndBoard": "Daftar <a data-value=\"editorialTeamUrl\" data-attribute=\"href\">Tim Editor</a>"
+}
