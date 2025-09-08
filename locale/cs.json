@@ -1,1 +1,24 @@
-{}
+{
+    "metric": "Metrika",
+    "thisArticle": "Tento článek",
+    "peerReviewers": "Recenzenti",
+    "authorStatements": "Prohlášení autora",
+    "dataAvailability": "Dostupnost dat",
+    "externalFunding": "Externí financování",
+    "forThisJournal": "Tento časopis",
+    "articlesAccepted": "Přijaté články",
+    "daysToPublication": "Dny do zveřejnění",
+    "indexedIn": "Indexováno v",
+    "academicSociety": "Společnost",
+    "informationIcon": "Informační stránka o publikačních údajích.",
+    "notAvailable": "Není k dispozici",
+    "yes": "Ano",
+    "no": "Ne",
+    "publicationFacts": "Publikační údaje",
+    "otherArticles": "Další články",
+    "competingInterests": "Konkurenční zájmy",
+    "otherJournals": "Další časopisy",
+    "editorAndBoard": "<a data-value=\"editorialTeamUrl\" data-attribute=\"href\">Seznam</a> redakčního týmu",
+    "publisher": "Vydavatel",
+    "informationFooter": "Chcete-li se dozvědět více o těchto publikačních údajích, klikněte na"
+}
