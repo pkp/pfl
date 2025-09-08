@@ -1,1 +1,24 @@
-{}
+{
+    "metric": "Metrika",
+    "thisArticle": "Tento článok",
+    "otherArticles": "Ďalšie články",
+    "peerReviewers": "Recenzenti",
+    "dataAvailability": "Dostupnosť dát",
+    "competingInterests": "Konkurenčné záujmy",
+    "forThisJournal": "Tento časopis",
+    "otherJournals": "Iné časopisy",
+    "articlesAccepted": "Prijaté články",
+    "daysToPublication": "Dni do publikovania",
+    "indexedIn": "Indexované v",
+    "academicSociety": "Spoločnosť",
+    "publisher": "Vydavateľ",
+    "informationFooter": "Ak sa chcete dozvedieť viac o týchto publikáciách, kliknite na",
+    "informationIcon": "Stránka s informáciami o publikácii.",
+    "no": "Nie",
+    "notAvailable": "Neuvádza sa",
+    "yes": "Áno",
+    "publicationFacts": "Informácie o publikácii",
+    "authorStatements": "Vyhlásenia autora",
+    "externalFunding": "Externé financovanie",
+    "editorAndBoard": "<a data-value=\"editorialTeamUrl\" data-attribute=\"href\">Zoznam</a> redakčného tímu"
+}
