@@ -1,1 +1,24 @@
-{}
+{
+    "metric": "Metrica",
+    "otherArticles": "Altri articoli",
+    "peerReviewers": "Revisori e revisore",
+    "authorStatements": "Dichiarazioni dell'autore",
+    "dataAvailability": "Disponibilità dei dati",
+    "externalFunding": "Fondi esterni",
+    "competingInterests": "Conflitti di interesse",
+    "daysToPublication": "Giorni alla pubblicazione",
+    "indexedIn": "Indicizzato in",
+    "academicSociety": "Società",
+    "publisher": "Editore",
+    "informationFooter": "Per informazioni su questi dati sulla pubblicazione, clicca qui",
+    "informationIcon": "Pagina informativa sui dati sulla pubblicazione.",
+    "notAvailable": "N/D",
+    "yes": "Sì",
+    "no": "No",
+    "publicationFacts": "Dati sulla pubblicazione",
+    "thisArticle": "Questo articolo",
+    "forThisJournal": "Questa rivista",
+    "otherJournals": "Altre riviste",
+    "articlesAccepted": "Articoli accettati",
+    "editorAndBoard": "Composizione del <a data-value=\"editorialTeamUrl\" data-attribute=\"href\">Comitato editoriale</a>"
+}
