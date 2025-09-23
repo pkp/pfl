@@ -9,7 +9,7 @@
     "forThisJournal": "Jurnal ini",
     "otherJournals": "Jurnal lain",
     "indexedIn": "Diindeks pada",
-    "academicSociety": "Komunitas",
+    "academicSociety": "Asosiasi",
     "publisher": "Penerbit",
     "informationFooter": "Untuk mempelajari mengenai fakta publikasi, klik",
     "informationIcon": "Halaman informasi fakta publikasi.",
@@ -18,7 +18,7 @@
     "notAvailable": "N/A",
     "yes": "Ya",
     "no": "Tidak",
-    "publicationFacts": "Fakta Publikasi",
+    "publicationFacts": "Informasi Publikasi",
     "externalFunding": "Pendanaan dari luar",
     "editorAndBoard": "Daftar <a data-value=\"editorialTeamUrl\" data-attribute=\"href\">Tim Editor</a>"
 }
