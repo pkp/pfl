@@ -19,5 +19,6 @@
     "notAvailable": "Ni na voljo",
     "yes": "Da",
     "no": "Ne",
-    "publicationFacts": "Informacije o objavi"
+    "publicationFacts": "Informacije o objavi",
+    "editorAndBoard": "Uredniški odbor <a data-value=\"editorialTeamUrl\" data-attribute=\"href\">seznam</a>"
 }
